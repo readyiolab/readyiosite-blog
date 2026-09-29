@@ -1,15 +1,77 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Manrope } from "next/font/google"
+import Script from "next/script"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { Footer } from "@/components/site/Footer"
+import { JsonLd } from "@/components/site/JsonLd"
+import { Nav } from "@/components/site/Nav"
+import { Toaster } from "@/components/site/Toaster"
+import { BLOG_URL, SITE, SITE_URL } from "@/lib/site"
+import { DEFAULT_OG_IMAGE, RSS_ALTERNATE } from "@/lib/metadata"
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+  display: "swap",
 })
+
+const GTM_ID = "GTM-MGCXVKMP"
+const DEFAULT_TITLE = "Readyio Blog — Product, AI, CRM & Engineering Insights"
+
+export const metadata: Metadata = {
+  metadataBase: new URL(BLOG_URL),
+  title: { default: DEFAULT_TITLE, template: "%s | Readyio Blog" },
+  description: SITE.description,
+  applicationName: SITE.blogName,
+  authors: [{ name: "Readyio", url: SITE_URL }],
+  publisher: "Readyio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  alternates: { types: RSS_ALTERNATE },
+  openGraph: {
+    siteName: SITE.blogName,
+    type: "website",
+    title: DEFAULT_TITLE,
+    description: SITE.description,
+    url: "/",
+    images: [{ ...DEFAULT_OG_IMAGE, type: "image/jpeg", alt: DEFAULT_TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: SITE.description,
+    images: [{ url: DEFAULT_OG_IMAGE.url, alt: DEFAULT_TITLE }],
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }, { url: "/logo.webp", type: "image/webp" }],
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#4F46E5",
+}
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE.name,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.webp`,
+  email: SITE.email,
+  sameAs: [SITE.social.linkedin, SITE.social.instagram],
+}
 
 export default function RootLayout({
   children,
@@ -17,13 +79,40 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
-    >
+    <html lang="en" className={manrope.variable}>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+      </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <JsonLd data={organizationJsonLd} />
+        <div className="relative min-h-dvh bg-background text-foreground antialiased">
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          >
+            Skip to content
+          </a>
+          <Nav />
+          <main id="main">{children}</main>
+          <Footer />
+          <Toaster />
+        </div>
       </body>
     </html>
   )
