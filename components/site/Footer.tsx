@@ -203,7 +203,7 @@ export function Footer() {
         </div>
 
         {/* Giant Subtle Brand Watermark */}
-        <div className="relative -mt-6 sm:-mt-10 select-none pointer-events-none overflow-hidden opacity-[0.05] dark:opacity-[0.035] text-center">
+        <div aria-hidden="true" className="relative -mt-6 sm:-mt-10 select-none pointer-events-none overflow-hidden opacity-[0.05] dark:opacity-[0.035] text-center">
           <span className="font-heading text-[17vw] font-black tracking-tighter leading-none text-foreground block">
             Readyio
           </span>

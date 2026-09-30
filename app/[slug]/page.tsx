@@ -141,7 +141,7 @@ export default async function ArticlePage({ params }: Props) {
       <JsonLd data={jsonLd} />
       <ViewPing slug={post.slug} />
 
-      <section className="relative overflow-hidden pt-36 pb-10 md:pt-40">
+      <section className="relative overflow-hidden pt-28 pb-8 md:pt-36 md:pb-10">
         <div aria-hidden className="absolute inset-0 -z-10 mesh-bg opacity-40" />
         <div className="mx-auto max-w-3xl container-p">
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider">
@@ -194,8 +194,9 @@ export default async function ArticlePage({ params }: Props) {
                   unoptimized={!isOptimizable(post.featured_image)}
                   alt={post.featured_image_alt || post.title}
                   fill
-                  preload
-                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  priority
+                  fetchPriority="high"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1024px"
                   className="object-cover"
                 />
               </div>

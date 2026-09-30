@@ -226,19 +226,19 @@
   --popover: #ffffff;
   --popover-foreground: #111827;
 
-  --primary: #6c5ce7;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
-  --primary-hover: #5b4bc4;
-  --primary-glow: #7c3aed;
+  --primary-hover: #4338ca;
+  --primary-glow: #6366f1;
 
-  --secondary: #7c3aed;
+  --secondary: #6366f1;
   --secondary-foreground: #ffffff;
 
   --muted: #f3f0eb;
-  --muted-foreground: #6b7280;
+  --muted-foreground: #475569;
 
-  --accent: #f0edf9;
-  --accent-foreground: #6c5ce7;
+  --accent: #eef2ff;
+  --accent-foreground: #4338ca;
 
   --success: #10b981;
   --destructive: #ef4444;

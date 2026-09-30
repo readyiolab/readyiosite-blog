@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next"
 import { Manrope } from "next/font/google"
-import Script from "next/script"
 
 import "./globals.css"
 import { Footer } from "@/components/site/Footer"
+import { GoogleTagManager } from "@/components/site/GoogleTagManager"
 import { JsonLd } from "@/components/site/JsonLd"
 import { Nav } from "@/components/site/Nav"
 import { Toaster } from "@/components/site/Toaster"
@@ -81,25 +81,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={manrope.variable}>
       <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://api.readyio.com" />
+        <link rel="preconnect" href="https://api.readyio.com" />
+        <link rel="dns-prefetch" href="https://igrowbig.blr1.digitaloceanspaces.com" />
+        <link rel="preconnect" href="https://igrowbig.blr1.digitaloceanspaces.com" crossOrigin="" />
       </head>
       <body>
-        <Script id="gtm" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`}
-        </Script>
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <JsonLd data={organizationJsonLd} />
         <div className="relative min-h-dvh bg-background text-foreground antialiased">
           <a
@@ -113,6 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <Footer />
           <Toaster />
         </div>
+        <GoogleTagManager gtmId={GTM_ID} />
       </body>
     </html>
   )
