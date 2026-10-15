@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const CMS_PUBLIC_URL = (process.env.NEXT_PUBLIC_CMS_API_URL || "https://api.zuvigo.com/api").replace(/\/$/, "");
+const CMS_PUBLIC_URL = (process.env.NEXT_PUBLIC_CMS_API_URL || "https://cms-api.zuvigo.com/api").replace(/\/$/, "");
 
 export function ViewPing({ slug }: { slug: string }) {
   useEffect(() => {
