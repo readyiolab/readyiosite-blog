@@ -1,4 +1,4 @@
-// Server-side reads from the Readyio CMS API.
+// Server-side reads from the Zuvigo CMS API.
 
 const CMS_API_URL = (process.env.CMS_API_URL || "http://localhost:4000/api").replace(/\/$/, "");
 

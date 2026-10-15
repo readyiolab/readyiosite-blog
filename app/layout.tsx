@@ -18,15 +18,15 @@ const manrope = Manrope({
 })
 
 const GTM_ID = "GTM-MGCXVKMP"
-const DEFAULT_TITLE = "Readyio Blog — Product, AI, CRM & Engineering Insights"
+const DEFAULT_TITLE = "Zuvigo Blog — Product, AI, CRM & Engineering Insights"
 
 export const metadata: Metadata = {
   metadataBase: new URL(BLOG_URL),
-  title: { default: DEFAULT_TITLE, template: "%s | Readyio Blog" },
+  title: { default: DEFAULT_TITLE, template: "%s | Zuvigo Blog" },
   description: SITE.description,
   applicationName: SITE.blogName,
-  authors: [{ name: "Readyio", url: SITE_URL }],
-  publisher: "Readyio",
+  authors: [{ name: "Zuvigo", url: SITE_URL }],
+  publisher: "Zuvigo",
   robots: {
     index: true,
     follow: true,
@@ -81,8 +81,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={manrope.variable}>
       <head>
-        <link rel="dns-prefetch" href="https://api.readyio.com" />
-        <link rel="preconnect" href="https://api.readyio.com" />
+        <link rel="dns-prefetch" href="https://api.zuvigo.com" />
+        <link rel="preconnect" href="https://api.zuvigo.com" />
         <link rel="dns-prefetch" href="https://igrowbig.blr1.digitaloceanspaces.com" />
         <link rel="preconnect" href="https://igrowbig.blr1.digitaloceanspaces.com" crossOrigin="" />
       </head>

@@ -116,7 +116,7 @@ export default async function ArticlePage({ params }: Props) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Readyio", item: SITE_URL },
+        { "@type": "ListItem", position: 1, name: "Zuvigo", item: SITE_URL },
         { "@type": "ListItem", position: 2, name: "Blog", item: `${BLOG_URL}/` },
         { "@type": "ListItem", position: 3, name: post.category_name, item: categoryUrl(post.category_slug) },
         { "@type": "ListItem", position: 4, name: post.title, item: url },
@@ -308,7 +308,7 @@ export default async function ArticlePage({ params }: Props) {
         }
         subtitle="From high-converting web apps to custom internal tooling and autonomous AI agents — partner with our engineering team to ship faster and smarter."
         buttonText="Discuss Your Project"
-        buttonHref="https://readyio.com/contact"
+        buttonHref="https://zuvigo.com/contact"
       />
     </article>
   )

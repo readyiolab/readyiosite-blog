@@ -29,7 +29,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     title: page > 1 ? `${name} articles — page ${page}` : `${name} articles`,
     description:
       category.description ||
-      `Readyio articles on ${name.toLowerCase()}: practical notes on building websites, apps, CRM/ERP and AI systems.`,
+      `Zuvigo articles on ${name.toLowerCase()}: practical notes on building websites, apps, CRM/ERP and AI systems.`,
     path: pageHref(`/category/${slug}`, page),
   })
 }
@@ -64,7 +64,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Readyio", item: SITE_URL },
+        { "@type": "ListItem", position: 1, name: "Zuvigo", item: SITE_URL },
         { "@type": "ListItem", position: 2, name: "Blog", item: `${BLOG_URL}/` },
         { "@type": "ListItem", position: 3, name: category.category_name, item: url },
       ],
@@ -79,7 +79,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
         title={<span className="text-gradient">{category.category_name}</span>}
         subtitle={
           category.description ||
-          `${result.total} article${result.total === 1 ? "" : "s"} on ${category.category_name.toLowerCase()} from the Readyio team.`
+          `${result.total} article${result.total === 1 ? "" : "s"} on ${category.category_name.toLowerCase()} from the Zuvigo team.`
         }
         categories={categories}
         activeCategory={slug}

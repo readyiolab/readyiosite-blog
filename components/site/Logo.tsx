@@ -13,11 +13,11 @@ export function Logo({
       <Link
         href="/"
         className={`inline-flex items-center justify-center ${className}`}
-        aria-label="Readyio Home"
+        aria-label="Zuvigo Home"
       >
         <Image
           src="/logo.webp"
-          alt="Readyio"
+          alt="Zuvigo"
           width={150}
           height={48}
           loading="eager"
@@ -31,11 +31,11 @@ export function Logo({
     <Link
       href="/"
       className={`group inline-flex items-center gap-2 ${className}`}
-      aria-label="Readyio Home"
+      aria-label="Zuvigo Home"
     >
       <Image
         src="/logo.webp"
-        alt="Readyio"
+        alt="Zuvigo"
         width={150}
         height={48}
         loading="eager"

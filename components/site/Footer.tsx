@@ -23,7 +23,7 @@ export function Footer() {
               <div>
                 <Logo />
                 <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground font-normal">
-                  Readyio builds high-converting websites, bespoke web applications, customized CRM platforms, and production AI automation — all through one accountable technology team.
+                  Zuvigo builds high-converting websites, bespoke web applications, customized CRM platforms, and production AI automation — all through one accountable technology team.
                 </p>
               </div>
 
@@ -185,7 +185,7 @@ export function Footer() {
 
           {/* Divider & Bottom Row */}
           <div className="mt-12 sm:mt-16 border-t border-border/70 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-            <p>© {currentYear} Readyio. All rights reserved.</p>
+            <p>© {currentYear} Zuvigo. All rights reserved.</p>
 
             <div className="flex flex-wrap items-center gap-6 sm:gap-8">
               <a href={siteUrl("/privacy")} className="transition-colors hover:text-foreground hover:underline">
@@ -205,7 +205,7 @@ export function Footer() {
         {/* Giant Subtle Brand Watermark */}
         <div aria-hidden="true" className="relative -mt-6 sm:-mt-10 select-none pointer-events-none overflow-hidden opacity-[0.05] dark:opacity-[0.035] text-center">
           <span className="font-heading text-[17vw] font-black tracking-tighter leading-none text-foreground block">
-            Readyio
+            Zuvigo
           </span>
         </div>
 

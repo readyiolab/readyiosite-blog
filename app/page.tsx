@@ -11,7 +11,7 @@ import { BLOG_URL, SITE, SITE_URL, postUrl } from "@/lib/site"
 
 type Props = { searchParams: Promise<{ page?: string | string[] }> }
 
-const TITLE = "Readyio Blog — Product, AI, CRM & Engineering Insights"
+const TITLE = "Zuvigo Blog — Product, AI, CRM & Engineering Insights"
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const page = parsePageParam((await searchParams).page)
@@ -56,7 +56,7 @@ export default async function BlogHome({ searchParams }: Props) {
     <>
       <JsonLd data={blogJsonLd} />
       <BlogIndex
-        eyebrow="Readyio Journal"
+        eyebrow="Zuvigo Journal"
         title={
           <>
             Ideas on <span className="text-gradient">shipping systems</span> that last.
@@ -70,16 +70,16 @@ export default async function BlogHome({ searchParams }: Props) {
       />
       <AuroraCTA
         id="blog-home-cta"
-        eyebrow="READYIO LABS"
+        eyebrow="ZUVIGO LABS"
         heading={
           <>
             Ready to Turn Ideas <br className="hidden sm:inline" />
             Into Production?
           </>
         }
-        subtitle="Turn engineering insights into real products. Partner with Readyio to build high-converting websites, bespoke web applications, and automated workflows."
+        subtitle="Turn engineering insights into real products. Partner with Zuvigo to build high-converting websites, bespoke web applications, and automated workflows."
         buttonText="Discuss Your Project"
-        buttonHref="https://readyio.com/contact"
+        buttonHref="https://zuvigo.com/contact"
       />
     </>
   )

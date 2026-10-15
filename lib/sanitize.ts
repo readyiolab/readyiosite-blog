@@ -32,12 +32,12 @@ const OPTIONS: sanitizeHtml.IOptions = {
       const href = attribs.href ?? "";
       const external = /^https?:\/\//i.test(href);
       const isContact = /\/contact\/?$/i.test(href);
-      const isHome = /(?:readyio\.com\/?$|\/$)/i.test(href);
+      const isHome = /(?:(?:zuvigo|readyio)\.com\/?$|\/$)/i.test(href);
       const ariaLabel = attribs["aria-label"] || (
         isContact
-          ? "Contact Readyio"
+          ? "Contact Zuvigo"
           : isHome
-          ? "Readyio Home"
+          ? "Zuvigo Home"
           : undefined
       );
 

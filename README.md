@@ -1,6 +1,6 @@
-# Readyio blog (`blog.readyio.com`)
+# Zuvigo blog (`blog.zuvigo.com`)
 
-Next.js 16 app that renders every blog article at `https://blog.readyio.com/<slug>`, plus the blog home, category pages, RSS feed and sitemap. Content comes from the Readyio API (`../Backend`) and is written in the admin panel (`../admin-panel`).
+Next.js 16 app that renders every blog article at `https://blog.zuvigo.com/<slug>`, plus the blog home, category pages, RSS feed and sitemap. Content comes from the Zuvigo API (`../Backend`) and is written in the admin panel (`../admin-panel`).
 
 Production deployment: see [`../deploy/DEPLOYMENT.md`](../deploy/DEPLOYMENT.md).
 
@@ -43,10 +43,10 @@ npm run dev               # http://localhost:8081
 
 | Variable | Dev (`.env.development`) | Prod (`.env.production`) | Used for |
 | --- | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | `http://localhost:8080` | `https://readyio.com` | Links back to the main site |
-| `NEXT_PUBLIC_BLOG_URL` | `http://localhost:8081` | `https://blog.readyio.com` | Canonical URLs, sitemap, RSS |
-| `NEXT_PUBLIC_API_URL` | `http://localhost:4000` | `https://api.readyio.com` | Newsletter signup (browser) |
-| `NEXT_PUBLIC_CMS_API_URL` | `http://localhost:4000/api` | `https://api.readyio.com/api` | View counter (browser) |
+| `NEXT_PUBLIC_SITE_URL` | `http://localhost:8080` | `https://zuvigo.com` | Links back to the main site |
+| `NEXT_PUBLIC_BLOG_URL` | `http://localhost:8081` | `https://blog.zuvigo.com` | Canonical URLs, sitemap, RSS |
+| `NEXT_PUBLIC_API_URL` | `http://localhost:4000` | `https://api.zuvigo.com` | Newsletter signup (browser) |
+| `NEXT_PUBLIC_CMS_API_URL` | `http://localhost:4000/api` | `https://api.zuvigo.com/api` | View counter (browser) |
 | `CMS_API_URL` | `http://localhost:4000/api` | `http://127.0.0.1:4000/api` | Server-side article fetches |
 | `REVALIDATE_SECRET` | `.env.local` | `.env.local` | Protects `POST /api/revalidate` |
 
