@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next"
-import { Manrope } from "next/font/google"
 
 import "./globals.css"
 import { Footer } from "@/components/site/Footer"
@@ -9,13 +8,6 @@ import { Nav } from "@/components/site/Nav"
 import { Toaster } from "@/components/site/Toaster"
 import { BLOG_URL, SITE, SITE_URL } from "@/lib/site"
 import { DEFAULT_OG_IMAGE, RSS_ALTERNATE } from "@/lib/metadata"
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-manrope",
-  display: "swap",
-})
 
 const GTM_ID = "GTM-MGCXVKMP"
 const DEFAULT_TITLE = "Zuvigo Blog — Product, AI, CRM & Engineering Insights"
@@ -79,8 +71,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={manrope.variable}>
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         <link rel="dns-prefetch" href="https://api.zuvigo.com" />
         <link rel="preconnect" href="https://api.zuvigo.com" />
         <link rel="dns-prefetch" href="https://igrowbig.blr1.digitaloceanspaces.com" />
