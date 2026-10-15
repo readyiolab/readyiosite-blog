@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import type { Category, PostPage, PostSummary } from "@/lib/cms";
 import { CategoryChips } from "./CategoryChips";
@@ -27,7 +28,7 @@ export function BlogIndex({
 }) {
   return (
     <>
-      <section className="relative overflow-hidden pt-36 pb-12 md:pt-44">
+      <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-14">
         <div aria-hidden className="absolute inset-0 -z-10 mesh-bg opacity-50" />
         <div className="mx-auto max-w-4xl container-p text-center">
           <SectionHeading eyebrow={eyebrow} as="h1" title={title} subtitle={subtitle} />
