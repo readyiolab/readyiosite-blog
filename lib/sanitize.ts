@@ -22,7 +22,7 @@ const OPTIONS: sanitizeHtml.IOptions = {
     th: ["colspan", "rowspan", "scope"],
     td: ["colspan", "rowspan"],
     ol: ["start", "type"],
-    "*": ["id"],
+    "*": ["id", "class", "style"],
   },
   allowedSchemes: ["http", "https", "mailto", "tel"],
   allowedSchemesByTag: { img: ["https", "http", "data"] },

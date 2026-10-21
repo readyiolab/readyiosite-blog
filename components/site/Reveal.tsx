@@ -14,20 +14,28 @@ export function Reveal({
   className,
   as = "div",
   y = 24,
+  eager = false,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
   as?: "div" | "section" | "span" | "li";
   y?: number;
+  /** Above-the-fold content: render immediately on first paint instead of waiting for scroll/hydration. */
+  eager?: boolean;
 }) {
+  if (eager) {
+    const Tag = as;
+    return <Tag className={className}>{children}</Tag>;
+  }
+
   const MotionTag = motion[as] as typeof motion.div;
   return (
     <MotionTag
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-20px" }}
       transition={{ duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] }}
       variants={defaultVariants}
     >

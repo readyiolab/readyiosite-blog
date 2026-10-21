@@ -10,7 +10,7 @@ export function FeaturedPost({ post }: { post: PostSummary }) {
   return (
     <section className="pb-16">
       <div className="mx-auto max-w-7xl container-p">
-        <Reveal>
+        <Reveal eager>
           <Link
             href={`/${post.slug}`}
             className="group relative grid overflow-hidden rounded-3xl border border-border bg-card md:grid-cols-2"
@@ -21,7 +21,7 @@ export function FeaturedPost({ post }: { post: PostSummary }) {
                 unoptimized={!isOptimizable(post.featured_image || DEFAULT_OG_IMAGE.url)}
                 alt={post.featured_image_alt || post.title}
                 fill
-                preload
+                priority
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />

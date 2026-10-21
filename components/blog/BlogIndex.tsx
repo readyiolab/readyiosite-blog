@@ -28,7 +28,7 @@ export function BlogIndex({
 }) {
   return (
     <>
-      <section className="relative overflow-hidden pt-16 pb-10 md:pt-24 md:pb-14">
+      <section className="relative overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-12 md:pt-36">
         <div aria-hidden className="absolute inset-0 -z-10 mesh-bg opacity-50" />
         <div className="mx-auto max-w-4xl container-p text-center">
           <SectionHeading eyebrow={eyebrow} as="h1" title={title} subtitle={subtitle} />

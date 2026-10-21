@@ -96,7 +96,7 @@ export function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discuss Your Project via Calendly"
-                className="group hidden items-center gap-1.5 rounded-full bg-[#111827] px-5 py-2.5 text-xs font-semibold text-white transition-all hover:bg-[#6C5CE7] md:inline-flex"
+                className="group hidden items-center gap-1.5 rounded-full bg-[#111827] px-5 py-2.5 text-xs font-semibold text-white transition-all hover:bg-primary md:inline-flex"
               >
                 Discuss Your Project
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -180,7 +180,7 @@ export function Nav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Discuss Your Project via Calendly"
-                  className="group flex items-center justify-center gap-2 rounded-full bg-[#111827] px-6 py-4 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#6C5CE7]"
+                  className="group flex items-center justify-center gap-2 rounded-full bg-[#111827] px-6 py-4 text-sm font-semibold text-white shadow-md transition-colors hover:bg-primary"
                 >
                   Discuss Your Project
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

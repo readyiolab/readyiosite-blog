@@ -4,6 +4,7 @@ import "./globals.css"
 import { Footer } from "@/components/site/Footer"
 import { GoogleTagManager } from "@/components/site/GoogleTagManager"
 import { JsonLd } from "@/components/site/JsonLd"
+import { Nav } from "@/components/site/Nav"
 import { Toaster } from "@/components/site/Toaster"
 import { BLOG_URL, SITE, SITE_URL } from "@/lib/site"
 import { DEFAULT_OG_IMAGE, RSS_ALTERNATE } from "@/lib/metadata"
@@ -50,7 +51,10 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#4F46E5",
+  themeColor: "#2563EB",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 const organizationJsonLd = {
@@ -89,6 +93,7 @@ export default function RootLayout({
           >
             Skip to content
           </a>
+          <Nav />
           <main id="main">{children}</main>
           <Footer />
           <Toaster />

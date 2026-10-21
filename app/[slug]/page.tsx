@@ -141,7 +141,7 @@ export default async function ArticlePage({ params }: Props) {
       <JsonLd data={jsonLd} />
       <ViewPing slug={post.slug} />
 
-      <section className="relative overflow-hidden pt-16 pb-8 md:pt-20 md:pb-10">
+      <section className="relative overflow-hidden pt-24 pb-8 sm:pt-28 md:pt-36 md:pb-10">
         <div aria-hidden className="absolute inset-0 -z-10 mesh-bg opacity-40" />
         <div className="mx-auto max-w-3xl container-p">
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider">
